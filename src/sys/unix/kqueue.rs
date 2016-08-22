@@ -1,8 +1,9 @@
 use {io, EventSet, PollOpt, Token};
 use event::IoEvent;
+use nix::libc::timespec;
 use nix::sys::event::{EventFilter, EventFlag, FilterFlag, KEvent, kqueue, kevent, kevent_ts};
 use nix::sys::event::{EV_ADD, EV_CLEAR, EV_DELETE, EV_DISABLE, EV_ENABLE, EV_EOF, EV_ERROR, EV_ONESHOT};
-use libc::{timespec, time_t, c_long};
+use libc::{time_t, c_long};
 use std::{fmt, slice};
 use std::os::unix::io::RawFd;
 use std::collections::HashMap;
